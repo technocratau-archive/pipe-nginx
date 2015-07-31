@@ -9,9 +9,8 @@ RUN echo "deb http://ppa.launchpad.net/nginx/stable/ubuntu $(lsb_release -sc) ma
   groupmod -g 1000 www-data
 
 ADD entrypoint.sh /entrypoint.sh
-# @todo: Fix below to allow linking from 
-# ADD nginx.conf /etc/nginx/nginx.conf
-# ADD default /etc/nginx/sites-available/default
+ADD nginx.conf /etc/nginx/nginx.conf
+ADD default /etc/nginx/sites-available/default
 
 RUN chmod u+x /entrypoint.sh
 
